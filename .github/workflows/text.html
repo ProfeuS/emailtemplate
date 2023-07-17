@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Phishing Test</title>
+    <style>
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        .message {
+            text-align: center;
+            font-size: 24px;
+            color: #333333;
+            margin-bottom: 20px;
+        }
+
+        .warning {
+            font-size: 18px;
+            color: red;
+            font-weight: bold;
+        }
+
+        .link {
+            text-decoration: none;
+            color: blue;
+        }
+
+        .link:hover {
+            text-decoration: underline;
+        }
+
+        .image {
+            max-width: 200px;
+            margin-bottom: 20px;
+        }
+
+        .sender {
+            font-size: 14px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://example.com/mail_image.png" alt="Mail Image" class="image">
+        <div class="message">
+            <p>Bu indirme bağlantısı bir simülasyondur ve gerçek bir güncelleme değildir.</p>
+            <p>Bilgi güvenliği farkındalığınızı artırmak için hazırlanan bir testtir.</p>
+        </div>
+        <div class="message">
+            <p>Lütfen dikkatli olun ve <a href="http://microsoft-teams-update.son-guncellemeler-indir.com" target="_blank" class="link">Teams uygulamasını güncelleyin</a> gibi şüpheli bağlantılara tıklamamaya özen gösterin.</p>
+        </div>
+        <div class="warning">Bu e-posta <span class="sender">info@mikrosoft.com</span> adresinden gönderilmiştir.</div>
+    </div>
+
+    <script>
+        window.onload = function() {
+            var link = document.querySelector('.link');
+            link.onclick = function(event) {
+                event.preventDefault();
+                alert('Bu indirme bağlantısı bir simülasyondur ve gerçek bir güncelleme değildir.\n\nBilgi güvenliği farkındalığınızı artırmak için hazırlanan bir testtir.');
+            }
+        }
+    </script>
+</body>
+</html>
